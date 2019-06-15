@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ChamCongNVService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/DTO_QLCP" />
+      <xs:element name="DoWork">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DoWorkResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDSCCNV">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDSCCNVResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getDSCCNVResult" nillable="true">
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:appinfo>
+                    <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTenNV">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="maNV" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTenNVResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getTenNVResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kiemtraCCNV">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="maNV" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ngay" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="caLam" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kiemtraCCNVResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kiemtraCCNVResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ThemCC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DTO_QLCP" minOccurs="0" name="ccnv" nillable="true" type="q1:ChamCongNV" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ThemCCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ThemCCResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SuaCC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTO_QLCP" minOccurs="0" name="ccnv" nillable="true" type="q2:ChamCongNV" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SuaCCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SuaCCResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="XoaCC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTO_QLCP" minOccurs="0" name="ccnv" nillable="true" type="q3:ChamCongNV" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="XoaCCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="XoaCCResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="DataTable" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTO_QLCP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTO_QLCP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ChamCongNV">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CaLam" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaNV" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NgayLam" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SoGioLam" type="xs:float" />
+          <xs:element minOccurs="0" name="TenNV" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ChamCongNV" nillable="true" type="tns:ChamCongNV" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IChamCongNVService_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_getDSCCNV_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDSCCNV" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_getDSCCNV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDSCCNVResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_getTenNV_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTenNV" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_getTenNV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTenNVResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_kiemtraCCNV_InputMessage">
+    <wsdl:part name="parameters" element="tns:kiemtraCCNV" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_kiemtraCCNV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:kiemtraCCNVResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_ThemCC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemCC" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_ThemCC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemCCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_SuaCC_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaCC" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_SuaCC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaCCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_XoaCC_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaCC" />
+  </wsdl:message>
+  <wsdl:message name="IChamCongNVService_XoaCC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaCCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IChamCongNVService">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/DoWork" message="tns:IChamCongNVService_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/DoWorkResponse" message="tns:IChamCongNVService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDSCCNV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/getDSCCNV" message="tns:IChamCongNVService_getDSCCNV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/getDSCCNVResponse" message="tns:IChamCongNVService_getDSCCNV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTenNV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/getTenNV" message="tns:IChamCongNVService_getTenNV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/getTenNVResponse" message="tns:IChamCongNVService_getTenNV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="kiemtraCCNV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/kiemtraCCNV" message="tns:IChamCongNVService_kiemtraCCNV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/kiemtraCCNVResponse" message="tns:IChamCongNVService_kiemtraCCNV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemCC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/ThemCC" message="tns:IChamCongNVService_ThemCC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/ThemCCResponse" message="tns:IChamCongNVService_ThemCC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaCC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/SuaCC" message="tns:IChamCongNVService_SuaCC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/SuaCCResponse" message="tns:IChamCongNVService_SuaCC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaCC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChamCongNVService/XoaCC" message="tns:IChamCongNVService_XoaCC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChamCongNVService/XoaCCResponse" message="tns:IChamCongNVService_XoaCC_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IChamCongNVService" type="tns:IChamCongNVService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDSCCNV">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/getDSCCNV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTenNV">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/getTenNV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kiemtraCCNV">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/kiemtraCCNV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemCC">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/ThemCC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaCC">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/SuaCC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCC">
+      <soap:operation soapAction="http://tempuri.org/IChamCongNVService/XoaCC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChamCongNVService">
+    <wsdl:port name="BasicHttpBinding_IChamCongNVService" binding="tns:BasicHttpBinding_IChamCongNVService">
+      <soap:address location="http://localhost:51914/ChamCongNVService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
