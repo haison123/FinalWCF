@@ -24,3 +24,9 @@ C:\Users\Dell\Desktop\WCF\DTO_QLCP\bin\Debug\DTO_QLCP.pdb
 C:\Users\Dell\Desktop\WCF\DTO_QLCP\obj\Debug\DTO_QLCP.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Desktop\WCF\DTO_QLCP\obj\Debug\DTO_QLCP.dll
 C:\Users\Dell\Desktop\WCF\DTO_QLCP\obj\Debug\DTO_QLCP.pdb
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\bin\Debug\DTO_QLCP.dll
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\bin\Debug\DTO_QLCP.pdb
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\obj\Debug\DTO_QLCP.csprojAssemblyReference.cache
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\obj\Debug\DTO_QLCP.csproj.CoreCompileInputs.cache
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\obj\Debug\DTO_QLCP.dll
+D:\Github\WCFFF\FinalWCF\DTO_QLCP\obj\Debug\DTO_QLCP.pdb

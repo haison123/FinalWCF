@@ -89,17 +89,17 @@ namespace DAL_QLCP
             return ds;
         }
 
-        public DSHoaDon report_HD(int i)
-        {
-            connect.Open();
-            SqlDataAdapter da = new SqlDataAdapter();
-            string query = "SELECT MaHD,MaMon,TenMon,SoLuong,DonGia,ThanhTien FROM tblCTHoaDon where MaHD='" + i + "'";
-            SqlDataAdapter dscm = new SqlDataAdapter(query, connect);
-            DSHoaDon ds = new DSHoaDon();
-            dscm.Fill(ds, "tblCTHoaDon");
-            connect.Close();
+        //public DSHoaDon report_HD(int i)
+        //{
+        //    connect.Open();
+        //    SqlDataAdapter da = new SqlDataAdapter();
+        //    string query = "SELECT MaHD,MaMon,TenMon,SoLuong,DonGia,ThanhTien FROM tblCTHoaDon where MaHD='" + i + "'";
+        //    SqlDataAdapter dscm = new SqlDataAdapter(query, connect);
+        //    DSHoaDon ds = new DSHoaDon();
+        //    dscm.Fill(ds, "tblCTHoaDon");
+        //    connect.Close();
 
-            return ds;
-        }
+        //    return ds;
+        //}
     }
 }
